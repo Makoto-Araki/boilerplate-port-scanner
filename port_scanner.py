@@ -7,13 +7,14 @@ def get_open_ports(target, port_range, bool = False):
     sock.settimeout(5)
 
     for port in range(port_range[0], port_range[1]):
-        if sock.connect_ex((target, port)) == 0:
+        status = sock.connect_ex((target, port))
+        if status == 0:
             open_ports.append(port)
             sock.close()
 
-    if bool:
-        print('bool == True')
+    if not bool:
+        return(open_ports)
     else:
         print('bool == False')
 
-    return(open_ports)
+    #return(open_ports)
