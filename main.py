@@ -2,25 +2,17 @@
 import port_scanner
 from unittest import main
 
-# I added - single port return
-#ports = port_scanner.get_open_ports("104.26.10.78", [440, 450])
-#print("Open ports:", ports)
-
-# I added - single port return
-#ports = port_scanner.get_open_ports("137.74.187.104", [440, 450])
-#print("Open ports:", ports)
-
-# I added - multiple port return
-#ports = port_scanner.get_open_ports("scanme.nmap.org", [20, 80])
-#print("Open ports:", ports)
-
 # Called with URL
-ports = port_scanner.get_open_ports("www.freecodecamp.org", [75,85])
-print("Open ports:", ports)
+#ports = port_scanner.get_open_ports("www.freecodecamp.org", [75,85])
+#print("Open ports:", ports)
+ports = port_scanner.get_open_ports("www.freecodecamp.org", [75,85], True)
+print(ports + '\n')
 
 # Called with ip address
-ports = port_scanner.get_open_ports("104.26.10.78", [8079, 8090])
-print("Open ports:", ports)
+#ports = port_scanner.get_open_ports("104.26.10.78", [8079, 8090])
+#print("Open ports:", ports)
+ports = port_scanner.get_open_ports("104.26.10.78", [8079, 8090], True)
+print(ports + '\n')
 
 # Verbose called with ip address and no host name returned -- single open port
 ports = port_scanner.get_open_ports("104.26.10.78", [440, 450], True)
