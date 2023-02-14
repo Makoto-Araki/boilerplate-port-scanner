@@ -6,10 +6,6 @@ from unittest import main
 ports = port_scanner.get_open_ports("www.freecodecamp.org", [75,85])
 print("Open ports:", ports)
 
-# I added
-#ports = port_scanner.get_open_ports('104.26.3.33', [75,85])
-#print("Open ports:", ports)
-
 # Called with ip address
 ports = port_scanner.get_open_ports("104.26.10.78", [8079, 8090])
 print("Open ports:", ports)
