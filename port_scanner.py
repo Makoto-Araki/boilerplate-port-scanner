@@ -52,7 +52,7 @@ def get_open_ports(target, port_range, bool = False):
     for port in range(port_range[0], port_range[1] + 1):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.settimeout(0.5)
-        status = sock.connect_ex((host, port))
+        status = sock.connect_ex((addr, port))
         if status == 0:
             open_ports.append(port)
         sock.close()
